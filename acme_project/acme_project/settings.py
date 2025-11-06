@@ -8,7 +8,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'users.MyUser' 
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / 'sent_emails' 
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -20,7 +21,11 @@ INSTALLED_APPS = [
     'birthday.apps.BirthdayConfig',
     'pages.apps.PagesConfig',
     'django_bootstrap5',
+    'users',
 ]
+
+AUTH_USER_MODEL = 'users.MyUser' 
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
