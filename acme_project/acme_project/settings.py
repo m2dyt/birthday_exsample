@@ -43,6 +43,8 @@ ROOT_URLCONF = 'acme_project.urls'
 
 TEMPLATES_DIR = BASE_DIR / 'templates'
 
+CSRF_FAILURE_VIEW = 'core.views.csrf_failure' 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
